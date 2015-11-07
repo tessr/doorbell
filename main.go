@@ -20,6 +20,7 @@ type TwiML struct {
 func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/twiml", twiml)
+	http.HandleFunc("/call", call)
 	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 }
 
