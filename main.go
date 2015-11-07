@@ -49,7 +49,7 @@ func call(w http.ResponseWriter, r *http.Request) {
 	v := url.Values{}
 	v.Set("To", os.Getenv("IPHONE"))
 	v.Set("From", os.Getenv("TWPHONE"))
-	v.Set("Url", "http://"+os.Getenv("NAME")+"herokuapp.com/twiml")
+	v.Set("Url", "http://"+os.Getenv("NAME")+".herokuapp.com/twiml")
 	rb := *strings.NewReader(v.Encode())
 
 	// Create Client
