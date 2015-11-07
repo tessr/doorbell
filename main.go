@@ -15,6 +15,7 @@ import (
 type TwiML struct {
 	XMLName xml.Name `xml:"Response"`
 	Say     string   `xml:",omitempty"`
+	Dial    string   `xml:",omitempty"`
 }
 
 func main() {
@@ -29,7 +30,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 }
 
 func twiml(w http.ResponseWriter, r *http.Request) {
-	twiml := TwiML{Say: "Hello World!"}
+	twiml := TwiML{Dial: os.Getenv("IPHONE")}
 	x, err := xml.Marshal(twiml)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
