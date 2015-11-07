@@ -14,7 +14,6 @@ import (
 
 type TwiML struct {
 	XMLName xml.Name `xml:"Response"`
-	Say     string   `xml:",omitempty"`
 	Dial    string   `xml:",omitempty"`
 }
 
