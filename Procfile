@@ -1,1 +1,1 @@
-web: ./doorbell
+web: doorbell
