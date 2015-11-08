@@ -14,7 +14,7 @@ type TwiML struct {
 
 func main() {
 	http.HandleFunc("/", handler)
-	http.HandleFunc("/twiml", twiml)
+	http.HandleFunc("/call", call)
 	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 }
 
@@ -22,7 +22,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "hello, world!\n")
 }
 
-func twiml(w http.ResponseWriter, r *http.Request) {
+func call(w http.ResponseWriter, r *http.Request) {
 	twiml := TwiML{Dial: os.Getenv("IPHONE")}
 	x, err := xml.Marshal(twiml)
 	if err != nil {

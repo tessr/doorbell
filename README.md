@@ -15,7 +15,7 @@ export PORT=whatever
 ```
 
 #### twilio number
-set up a twilio number, and set its voice request URL to `<NAME>.herokuapp.com/call`.
+set up a twilio number, and set its voice request URL to `<NAME>.herokuapp.com/call`. also make sure it's a GET request! this just returns xml ("twiml") 
 
 #### heroku notes
 i skipped all that buildpack business here, so you need to `go build ./...` before pushing to heroku.
